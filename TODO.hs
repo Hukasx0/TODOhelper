@@ -20,7 +20,7 @@ getTodoLine str
 
 findTodo :: String -> String
 findTodo text
-        | ((text!!0)=='T')&&((text!!1)=='O')&&((text!!2)=='D')&&((text!!3)=='O')=text
+        | ((text!!0)=='T')&&((text!!1)=='O')&&((text!!2)=='D')&&((text!!3)=='O')=(takeWhile (/= '\n') text)
         | otherwise = (findTodo (tail text))
 
 todoRead :: IO ()
